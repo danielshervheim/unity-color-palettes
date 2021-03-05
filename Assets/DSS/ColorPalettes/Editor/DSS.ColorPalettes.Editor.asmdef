@@ -1,0 +1,17 @@
+{
+    "name": "DSS.ColorPalettes.Editor",
+    "references": [
+        "DSS.ColorPalettes.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

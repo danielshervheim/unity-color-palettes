@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae72aaa36a29f4ed886f22b2e00ca826, type: 3}
+  m_Name: Themes
+  m_EditorClassIdentifier: 
+  entries: []
+  palettes:
+  - {fileID: 11400000, guid: 748e1bb9cdd9b4881ab6a966f81703ba, type: 2}
+  - {fileID: 11400000, guid: f2957ae5e5d2c446b9183cffca8ee2ae, type: 2}
+  index: 0
