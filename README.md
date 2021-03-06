@@ -6,5 +6,5 @@ TODO: write this.
 
 ## Demo
 
-[![demo](https://i.imgur.com/pCBwgqv.gif)](https://imgur.com/yuWvXo9)
+[![demo](https://i.imgur.com/pCBwgqv.gif)](https://imgur.com/a/qSkGVFI)
 
