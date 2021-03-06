@@ -1,13 +1,3 @@
-{
-    "name": "DSS.ColorPalettes.Runtime",
-    "references": [],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+﻿{
+	"name": "DSS.ColorPalettes.Runtime"
 }
