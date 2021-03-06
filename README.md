@@ -8,4 +8,3 @@ TODO: write this.
 
 [![demo](https://i.imgur.com/pCBwgqv.gif)](https://imgur.com/yuWvXo9)
 
-[Imgur](https://imgur.com/)
