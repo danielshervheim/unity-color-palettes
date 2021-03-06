@@ -17,3 +17,5 @@ MonoBehaviour:
     color: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 1}
   - name: Text
     color: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
+  - name: Accent
+    color: {r: 0, g: 0.7075472, b: 0.30658156, a: 1}
