@@ -21,7 +21,7 @@ namespace DSS.ColorPalettes
         }
 
         [SerializeField] ColorPalette preset = default;
-        [SerializeField] ApplicationTarget[] targets;
+        [SerializeField] ApplicationTarget[] targets = default;
 
         [SerializeField] AnimationCurve lerpCurve = AnimationCurve.Linear(0f,0f,1f,1f);
         [SerializeField] float lerpDuration = 0.25f;
