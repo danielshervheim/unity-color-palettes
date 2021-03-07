@@ -23,3 +23,7 @@
 ## 1.1.3
 
 - Fixed a bug where the `ApplyColorPaletteToButton` state wouldn't properly reset if it's gameObject was disabled.
+
+## 1.1.4
+
+- Added `ApplyColorPaletteToToggle` specialized class for Toggles.
