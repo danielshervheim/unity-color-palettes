@@ -19,3 +19,7 @@
 ## 1.1.2
 
 - Added a `hoveredEntryName` option to the `ApplyColorPaletteToButton` class.
+
+## 1.1.3
+
+- Fixed a bug where the `ApplyColorPaletteToButton` state wouldn't properly reset if it's gameObject was disabled.
