@@ -46,22 +46,7 @@ namespace DSS.ColorPalettes
             clickTimer += (click ? 1f : -1f) * Time.deltaTime / lerpDuration;
             clickTimer = Mathf.Clamp01(clickTimer);
 
-            foreach (ApplicationTarget target in targets)
-            {
-                if (target == null || target.graphic == null)
-                {
-                    continue;
-                }
-                target.graphic.color = Color.Lerp(
-                    Color.Lerp(
-                        preset.GetColor(target.unclickedEntryName),
-                        preset.GetColor(target.hoveredEntryName),
-                        lerpCurve.Evaluate(hoverTimer)
-                    ),
-                    preset.GetColor(target.clickedEntryName),
-                    lerpCurve.Evaluate(clickTimer)
-                );
-            }
+            UpdateColors();
         }
 
         public void OnPointerDown(PointerEventData data)
@@ -82,6 +67,35 @@ namespace DSS.ColorPalettes
         public void OnPointerExit(PointerEventData data)
         {
             hover = false;
+        }
+
+        private void OnDisable()
+        {
+            hover = false;
+            click = false;
+            hoverTimer = 0f;
+            clickTimer = 0f;
+            UpdateColors();
+        }
+
+        private void UpdateColors()
+        {
+            foreach (ApplicationTarget target in targets)
+            {
+                if (target == null || target.graphic == null)
+                {
+                    continue;
+                }
+                target.graphic.color = Color.Lerp(
+                    Color.Lerp(
+                        preset.GetColor(target.unclickedEntryName),
+                        preset.GetColor(target.hoveredEntryName),
+                        lerpCurve.Evaluate(hoverTimer)
+                    ),
+                    preset.GetColor(target.clickedEntryName),
+                    lerpCurve.Evaluate(clickTimer)
+                );
+            }
         }
     }
 }
