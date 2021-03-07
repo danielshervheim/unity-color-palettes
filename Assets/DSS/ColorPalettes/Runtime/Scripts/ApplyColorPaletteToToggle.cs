@@ -4,13 +4,13 @@ using UnityEngine.UI;
 
 namespace DSS.ColorPalettes
 {
-    // @brief A special color palette applicator, specifically meant for Buttons.
-    // It allows you to specify different color palette entries for the Button
-    // (and any contained graphics), that change depending on wether the button is
-    // hovered, clicked or not.
-    [RequireComponent(typeof(Button))]
+    // @brief A special color palette applicator, specifically meant for Toggles.
+    // It allows you to specify different color palette entries for the Toggle
+    // (and any contained graphics), that change depending on wether the Toggle is
+    // hovered, clicked, and activated, or not.
+    [RequireComponent(typeof(Toggle))]
     [ExecuteInEditMode]
-    public class ApplyColorPaletteToButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
+    public class ApplyColorPaletteToToggle : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
     {
         [System.Serializable]
         public class ApplicationTarget
@@ -19,6 +19,7 @@ namespace DSS.ColorPalettes
             public string unclickedEntryName;
             public string hoveredEntryName;
             public string clickedEntryName;
+            public string activatedEntryName;
         }
 
         [SerializeField] ColorPalette preset = default;
@@ -33,11 +34,18 @@ namespace DSS.ColorPalettes
         float clickTimer = 0f;
         bool click = false;
 
+        Toggle toggle;
+
         void Update()
         {
             if (preset == null)
             {
                 return;
+            }
+
+            if (toggle == null)
+            {
+                toggle = GetComponent<Toggle>();
             }
 
             hoverTimer += (hover ? 1f : -1f) * Time.deltaTime / lerpDuration;
@@ -88,7 +96,7 @@ namespace DSS.ColorPalettes
                 }
                 target.graphic.color = Color.Lerp(
                     Color.Lerp(
-                        preset.GetColor(target.unclickedEntryName),
+                        toggle.isOn ? preset.GetColor(target.activatedEntryName) : preset.GetColor(target.unclickedEntryName),
                         preset.GetColor(target.hoveredEntryName),
                         lerpCurve.Evaluate(hoverTimer)
                     ),

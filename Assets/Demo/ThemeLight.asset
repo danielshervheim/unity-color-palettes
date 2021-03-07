@@ -31,3 +31,5 @@ MonoBehaviour:
     color: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
   - name: ButtonText_Clicked
     color: {r: 1, g: 1, b: 1, a: 1}
+  - name: White
+    color: {r: 1, g: 1, b: 1, a: 1}
