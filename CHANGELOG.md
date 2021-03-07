@@ -15,3 +15,7 @@
 ## 1.1.1
 
 - Fixed bug related to default value of `Targets` property in `ApplyColorPaletteToButton` script.
+
+## 1.1.2
+
+- Added a `hoveredEntryName` option to the `ApplyColorPaletteToButton` class.
