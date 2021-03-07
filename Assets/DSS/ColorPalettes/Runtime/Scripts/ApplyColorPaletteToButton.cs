@@ -10,14 +10,15 @@ namespace DSS.ColorPalettes
     // clicked or not.
     [RequireComponent(typeof(Button))]
     [ExecuteInEditMode]
-    public class ApplyColorPaletteToButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+    public class ApplyColorPaletteToButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
     {
         [System.Serializable]
         public class ApplicationTarget
         {
             public Graphic graphic;
-            public string clickedEntryName;
             public string unclickedEntryName;
+            public string hoveredEntryName;
+            public string clickedEntryName;
         }
 
         [SerializeField] ColorPalette preset = default;
@@ -26,9 +27,11 @@ namespace DSS.ColorPalettes
         [SerializeField] AnimationCurve lerpCurve = AnimationCurve.Linear(0f,0f,1f,1f);
         [SerializeField] float lerpDuration = 0.25f;
 
-        float timer = 0f;
-        bool clicked = false;
+        float hoverTimer = 0f;
+        bool hover = false;
 
+        float clickTimer = 0f;
+        bool click = false;
 
         void Update()
         {
@@ -37,8 +40,11 @@ namespace DSS.ColorPalettes
                 return;
             }
 
-            timer += (clicked ? 1f : -1f) * Time.deltaTime / lerpDuration;
-            timer = Mathf.Clamp01(timer);
+            hoverTimer += (hover ? 1f : -1f) * Time.deltaTime / lerpDuration;
+            hoverTimer = Mathf.Clamp01(hoverTimer);
+
+            clickTimer += (click ? 1f : -1f) * Time.deltaTime / lerpDuration;
+            clickTimer = Mathf.Clamp01(clickTimer);
 
             foreach (ApplicationTarget target in targets)
             {
@@ -46,18 +52,36 @@ namespace DSS.ColorPalettes
                 {
                     continue;
                 }
-                target.graphic.color = Color.Lerp(preset.GetColor(target.unclickedEntryName), preset.GetColor(target.clickedEntryName), lerpCurve.Evaluate(timer));
+                target.graphic.color = Color.Lerp(
+                    Color.Lerp(
+                        preset.GetColor(target.unclickedEntryName),
+                        preset.GetColor(target.hoveredEntryName),
+                        lerpCurve.Evaluate(hoverTimer)
+                    ),
+                    preset.GetColor(target.clickedEntryName),
+                    lerpCurve.Evaluate(clickTimer)
+                );
             }
         }
 
         public void OnPointerDown(PointerEventData data)
         {
-            clicked = true;
+            click = true;
         }
 
         public void OnPointerUp(PointerEventData data)
         {
-            clicked = false;
+            click = false;
+        }
+
+        public void OnPointerEnter(PointerEventData data)
+        {
+            hover = true;
+        }
+
+        public void OnPointerExit(PointerEventData data)
+        {
+            hover = false;
         }
     }
 }

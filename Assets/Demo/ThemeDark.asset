@@ -21,9 +21,13 @@ MonoBehaviour:
     color: {r: 0, g: 0.7075472, b: 0.30658156, a: 1}
   - name: ButtonBackground
     color: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
-  - name: ButtonText
-    color: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
+  - name: ButtonBackground_Hover
+    color: {r: 0.01886791, g: 0.01886791, b: 0.01886791, a: 1}
   - name: ButtonBackground_Clicked
     color: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
+  - name: ButtonText
+    color: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
+  - name: ButtonText_Hover
+    color: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
   - name: ButtonText_Clicked
     color: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 1}
