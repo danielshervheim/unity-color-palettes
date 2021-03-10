@@ -1,0 +1,21 @@
+{
+    "author": {
+      "name" : "Daniel Shervheim",
+      "email" : "danielshervheim@gmail.com",
+      "url" : "https://www.danielshervheim.com/"
+    },
+    "description": "A way to keep color styles consistant throughout a project.",
+    "displayName": "Color Palettes",
+    "keywords": [
+      "unity",
+      "color",
+      "theme",
+      "color palette"
+    ],
+    "license": "BSD-3-Clause",
+    "name": "com.dss.color-palettes",
+    "repository": "github:danielshervheim/unity-color-palettes",
+    "unity": "2018.3",
+    "version": "1.1.4",
+    "hideInEditor": false
+}
