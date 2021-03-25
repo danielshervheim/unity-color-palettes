@@ -19,3 +19,42 @@ A system to keep UnityEngine.Graphic colors consistent throughout a project.
 ## Demo
 
 [![demo](https://i.imgur.com/pCBwgqv.gif)](https://imgur.com/a/qSkGVFI)
+
+
+## How To Install
+
+The color-palettes package uses the [scoped registry](https://docs.unity3d.com/Manual/upm-scoped.html) feature to import
+dependent packages. Please add the following sections to the package manifest
+file (`Packages/manifest.json`).
+
+To the `scopedRegistries` section:
+
+```
+{
+  "name": "DSS",
+  "url": "https://registry.npmjs.com",
+  "scopes": [ "com.dss" ]
+}
+```
+
+To the `dependencies` section:
+
+```
+"com.dss.color-palettes": "1.2.0"
+```
+
+After changes, the manifest file should look like below:
+
+```
+{
+  "scopedRegistries": [
+    {
+      "name": "DSS",
+      "url": "https://registry.npmjs.com",
+      "scopes": [ "com.dss" ]
+    }
+  ],
+  "dependencies": {
+    "com.dss.color-palettes": "1.2.0",
+    ...
+```

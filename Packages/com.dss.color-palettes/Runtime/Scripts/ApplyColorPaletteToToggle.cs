@@ -59,7 +59,7 @@ namespace DSS.ColorPalettes
 
         public void OnPointerDown(PointerEventData data)
         {
-            click = true;
+            click = toggle.interactable;
         }
 
         public void OnPointerUp(PointerEventData data)
@@ -69,7 +69,7 @@ namespace DSS.ColorPalettes
 
         public void OnPointerEnter(PointerEventData data)
         {
-            hover = true;
+            hover = toggle.interactable;
         }
 
         public void OnPointerExit(PointerEventData data)

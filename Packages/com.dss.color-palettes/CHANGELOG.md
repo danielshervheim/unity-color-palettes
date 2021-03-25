@@ -27,3 +27,7 @@
 ## 1.1.4
 
 - Added `ApplyColorPaletteToToggle` specialized class for Toggles.
+
+## 1.2.0
+
+- Changed the way `ApplycolorPaletteToButton` and `ApplyColorPaletteToToggle` work. Now they will only show their unclicked colors if their respective buttons or toggles are marked "not interactable". (i.e. they will not change colors based on hover or click events).

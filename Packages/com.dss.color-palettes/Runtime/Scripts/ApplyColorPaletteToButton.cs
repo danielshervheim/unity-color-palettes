@@ -33,11 +33,18 @@ namespace DSS.ColorPalettes
         float clickTimer = 0f;
         bool click = false;
 
+        private Button button = null;
+
         void Update()
         {
             if (preset == null)
             {
                 return;
+            }
+
+            if (button == null)
+            {
+                button = GetComponent<Button>();
             }
 
             hoverTimer += (hover ? 1f : -1f) * Time.deltaTime / lerpDuration;
@@ -51,7 +58,7 @@ namespace DSS.ColorPalettes
 
         public void OnPointerDown(PointerEventData data)
         {
-            click = true;
+            click = button.interactable;
         }
 
         public void OnPointerUp(PointerEventData data)
@@ -61,7 +68,7 @@ namespace DSS.ColorPalettes
 
         public void OnPointerEnter(PointerEventData data)
         {
-            hover = true;
+            hover = button.interactable;
         }
 
         public void OnPointerExit(PointerEventData data)
