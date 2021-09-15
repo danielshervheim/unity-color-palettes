@@ -34,18 +34,24 @@ namespace DSS.ColorPalettes
         float clickTimer = 0f;
         bool click = false;
 
-        Toggle toggle;
+        private Toggle _toggle;
+        private Toggle toggle
+        {
+            get
+            {
+                if (_toggle == null)
+                {
+                    _toggle = GetComponent<Toggle>();
+                }
+                return _toggle;
+            }
+        }
 
         void Update()
         {
             if (preset == null)
             {
                 return;
-            }
-
-            if (toggle == null)
-            {
-                toggle = GetComponent<Toggle>();
             }
 
             hoverTimer += (hover ? 1f : -1f) * Time.deltaTime / lerpDuration;

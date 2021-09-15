@@ -30,4 +30,8 @@
 
 ## 1.2.0
 
-- Changed the way `ApplycolorPaletteToButton` and `ApplyColorPaletteToToggle` work. Now they will only show their unclicked colors if their respective buttons or toggles are marked "not interactable". (i.e. they will not change colors based on hover or click events).
+- Changed the way `ApplyColorPaletteToButton` and `ApplyColorPaletteToToggle` work. Now they will only show their unclicked colors if their respective buttons or toggles are marked "not interactable". (i.e. they will not change colors based on hover or click events).
+
+## 1.2.1
+
+- Fixed potential null reference exceptions in `ApplyColorPaletteToButton`, `ApplyColorPaletteToToggle`, and `ApplyColorPalette` scripts.

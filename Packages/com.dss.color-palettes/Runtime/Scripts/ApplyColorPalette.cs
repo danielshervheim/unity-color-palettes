@@ -10,18 +10,24 @@ namespace DSS.ColorPalettes
         [SerializeField] ColorPalette preset = default;
         [SerializeField] string entryName = default;
 
-        Graphic target = null;
+        Graphic _target = null;
+        Graphic target
+        {
+            get
+            {
+                if (_target == null)
+                {
+                    _target = GetComponent<Graphic>();
+                }
+                return _target;
+            }
+        }
 
         void Update()
         {
             if (preset == null)
             {
                 return;
-            }
-
-            if (target == null)
-            {
-                target = GetComponent<Graphic>();
             }
 
             target.color = preset.GetColor(entryName);

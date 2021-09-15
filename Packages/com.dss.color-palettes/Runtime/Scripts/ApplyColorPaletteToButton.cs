@@ -33,18 +33,24 @@ namespace DSS.ColorPalettes
         float clickTimer = 0f;
         bool click = false;
 
-        private Button button = null;
+        private Button _button = null;
+        private Button button
+        {
+            get
+            {
+                if (_button == null)
+                {
+                    _button = GetComponent<Button>();
+                }
+                return _button;
+            }
+        }
 
         void Update()
         {
             if (preset == null)
             {
                 return;
-            }
-
-            if (button == null)
-            {
-                button = GetComponent<Button>();
             }
 
             hoverTimer += (hover ? 1f : -1f) * Time.deltaTime / lerpDuration;
@@ -93,6 +99,7 @@ namespace DSS.ColorPalettes
                 {
                     continue;
                 }
+                
                 target.graphic.color = Color.Lerp(
                     Color.Lerp(
                         preset.GetColor(target.unclickedEntryName),
