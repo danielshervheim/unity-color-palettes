@@ -35,3 +35,8 @@
 ## 1.2.1
 
 - Fixed potential null reference exceptions in `ApplyColorPaletteToButton`, `ApplyColorPaletteToToggle`, and `ApplyColorPalette` scripts.
+
+## 1.3.0
+
+- Updated to Unity 2020.3
+- Added fix for one-frame-late updates

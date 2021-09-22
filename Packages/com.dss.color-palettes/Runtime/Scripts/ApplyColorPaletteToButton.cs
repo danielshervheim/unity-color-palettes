@@ -59,7 +59,7 @@ namespace DSS.ColorPalettes
             clickTimer += (click ? 1f : -1f) * Time.deltaTime / lerpDuration;
             clickTimer = Mathf.Clamp01(clickTimer);
 
-            UpdateColors();
+            ApplyColor();
         }
 
         public void OnPointerDown(PointerEventData data)
@@ -82,16 +82,21 @@ namespace DSS.ColorPalettes
             hover = false;
         }
 
+        private void OnEnable()
+        {
+            ApplyColor();
+        }
+
         private void OnDisable()
         {
             hover = false;
             click = false;
             hoverTimer = 0f;
             clickTimer = 0f;
-            UpdateColors();
+            ApplyColor();
         }
 
-        private void UpdateColors()
+        public void ApplyColor()
         {
             foreach (ApplicationTarget target in targets)
             {

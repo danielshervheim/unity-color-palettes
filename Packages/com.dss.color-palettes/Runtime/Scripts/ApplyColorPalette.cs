@@ -25,6 +25,21 @@ namespace DSS.ColorPalettes
 
         void Update()
         {
+            ApplyColor();
+        }
+
+        void OnEnable()
+        {
+            ApplyColor();
+        }
+
+        void OnDisable()
+        {
+            ApplyColor();
+        }
+
+        public void ApplyColor()
+        {
             if (preset == null)
             {
                 return;

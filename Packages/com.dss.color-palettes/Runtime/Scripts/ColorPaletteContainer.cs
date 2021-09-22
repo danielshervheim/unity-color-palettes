@@ -36,7 +36,26 @@ namespace DSS.ColorPalettes
             }
             else
             {
+                bool forceUpdate = index != newIndex;
                 index = newIndex;
+                
+                if (forceUpdate)
+                {
+                    foreach (ApplyColorPalette applicator in Object.FindObjectsOfType<ApplyColorPalette>(true))
+                    {
+                        applicator.ApplyColor();
+                    }
+
+                    foreach (ApplyColorPaletteToButton applicator in Object.FindObjectsOfType<ApplyColorPaletteToButton>(true))
+                    {
+                        applicator.ApplyColor();
+                    }
+
+                    foreach (ApplyColorPaletteToToggle applicator in Object.FindObjectsOfType<ApplyColorPaletteToToggle>(true))
+                    {
+                        applicator.ApplyColor();
+                    }
+                }
             }
         }
 
