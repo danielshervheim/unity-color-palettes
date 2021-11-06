@@ -65,6 +65,12 @@ namespace DSS.ColorPalettes
             return index;
         }
 
+        // @brief Incremenets the index to the next palette in the list.
+        public void IncrementIndex()
+        {
+            SetIndex((GetIndex() + 1) % GetPaletteCount());
+        }
+
         // @brief Returns the total number of palettes in this container.
         public int GetPaletteCount()
         {

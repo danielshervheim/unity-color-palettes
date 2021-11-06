@@ -40,3 +40,7 @@
 
 - Updated to Unity 2020.3
 - Added fix for one-frame-late updates
+
+## 1.3.1
+
+- Added `IncrementIndex` method to `ColorPaletteContainer` class.
