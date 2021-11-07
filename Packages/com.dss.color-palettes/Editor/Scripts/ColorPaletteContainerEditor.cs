@@ -10,12 +10,14 @@ namespace DSS.ColorPalettes
         private SerializedProperty m_palettes;
         private SerializedProperty m_index;
         private ReorderableList m_ReorderableList;
+        private SerializedProperty m_onIndexChanged;
 
         private void OnEnable()
         {
             // Find the list in our ScriptableObject script.
             m_palettes = serializedObject.FindProperty("palettes");
             m_index = serializedObject.FindProperty("index");
+            m_onIndexChanged = serializedObject.FindProperty("onIndexChanged");
 
             // Create an instance of our reorderable list.
             m_ReorderableList = new ReorderableList(
@@ -120,6 +122,7 @@ namespace DSS.ColorPalettes
         {
             serializedObject.Update();
             m_ReorderableList.DoLayoutList();
+            EditorGUILayout.PropertyField(m_onIndexChanged);
             serializedObject.ApplyModifiedProperties();
         }
     }

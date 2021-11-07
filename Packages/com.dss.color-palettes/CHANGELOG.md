@@ -44,3 +44,7 @@
 ## 1.3.1
 
 - Added `IncrementIndex` method to `ColorPaletteContainer` class.
+
+## 1.3.2
+
+- Added an `OnIndexChanged` event to the `ColorPaletteContainer` class.

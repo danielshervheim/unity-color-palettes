@@ -17,3 +17,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 748e1bb9cdd9b4881ab6a966f81703ba, type: 2}
   - {fileID: 11400000, guid: f2957ae5e5d2c446b9183cffca8ee2ae, type: 2}
   index: 1
+  onIndexChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
